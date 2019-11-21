@@ -1,17 +1,18 @@
-require 'pry'
 
 class Galaxy
-    attr_reader :name, :universe
+    attr_accessor :name
+    attr_reader :universe
 
     @@all = []
 
     def initialize(name, universe)
         @name = name
-        @universe = universe # do we need this, or the other way around??? Clue 3.
+        @universe = universe
         @@all << self
     end
 
     def self.all
         @@all
     end
+
 end
