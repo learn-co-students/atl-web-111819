@@ -10,3 +10,10 @@ Here's some of the talks that we participated in during your 15 weeks.
 | Title | Link |
 |-------|------|
 | Pair Programming Talk | [Video](https://www.youtube.com/watch?v=-xCgjjtQGdM) |
+
+
+### Breakout Sessions
+
+| Title | Link | 
+| ----- | -----|
+| Git Review | [Video](https://www.youtube.com/watch?v=w0LkhxeUxj8) | 
