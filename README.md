@@ -10,6 +10,7 @@ Here's some of the talks that we participated in during your 15 weeks.
 | Title | Link |
 |-------|------|
 | Pair Programming Talk | [Video](https://www.youtube.com/watch?v=-xCgjjtQGdM) |
+| Learning to Learn | [Slides](https://docs.google.com/presentation/d/1MWw7Q0mcVDk75AsUcmZ0naN_s0GWS4Y1AEonops64GU/edit?usp=sharing) |
 
 
 ### Breakout Sessions
