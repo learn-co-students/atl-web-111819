@@ -5,6 +5,10 @@ class BooksController < ApplicationController
         erb :'books/index.html'
     end
 
+    post '/books' do
+        Book.new(title:)
+    end
+
     get '/books/new' do
         erb :"books/new"
     end
