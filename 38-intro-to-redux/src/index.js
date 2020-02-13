@@ -5,7 +5,25 @@ import "./index.css";
 import logo from "./logo.svg";
 import "./App.css";
 
+import { createStore } from 'redux';
+
 const initialState = { count: 0 };
+
+// store.dispatch({ type: 'SOME_ACTION' })
+
+const reducer = (state = initialState,action) => {
+
+  if(action.type === 'INC'){
+    return { count: state.count + action.data }
+  }else if(action.type === 'MUL'){
+    return { count: state.count * action.data }
+  }
+
+  return state
+}
+
+const store = createStore(reducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+
 
 const App = () => {
   return (
@@ -27,29 +45,25 @@ const Header = () => {
 
 class Counter extends Component {
 
-  state = initialState
+  componentDidMount(){
+    store.subscribe(() => this.forceUpdate())
+  }
 
   renderDescription = () => {
-    const count = this.state.count;
+    const count = store.getState().count;
     const remainder = count % 5;
     const upToNext = 5 - remainder;
     return `The current count is less than ${count + upToNext}`;
   };
 
-  handleIncrement = () => {
-    this.setState({ count: this.state.count + 1})
-  }
-
-  handleDecrement = () => {
-    this.setState({ count: this.state.count - 1})
-  }
-
   render(){
     return (
       <div className="Counter">
-        <h3> {this.state.count} </h3>
-        <button onClick={this.handleDecrement}> - </button>
-        <button onClick={this.handleIncrement}> + </button>
+        <h3> {store.getState().count} </h3>
+        <button onClick={() => store.dispatch({ type: 'MUL', data: 3 })}> *3 </button>
+        <button onClick={() => store.dispatch({ type: 'INC', data: -1 })}> - </button>
+        <button onClick={() => store.dispatch({ type: 'INC', data: 1 })}> + </button>
+        <button onClick={() => store.dispatch({ type: 'MUL', data: 5 })}> *5 </button>
         <h3>{this.renderDescription()}</h3>
       </div>
     );
