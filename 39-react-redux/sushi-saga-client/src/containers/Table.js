@@ -1,5 +1,7 @@
 import React, { Fragment } from 'react'
 
+import { connect } from 'react-redux'
+
 const Table = (props) => {
 
   const renderPlates = (array) => {
@@ -24,4 +26,8 @@ const Table = (props) => {
   )
 }
 
-export default Table
+const mapStateToProps = (state) => {
+  return state.sushi
+}
+
+export default connect(mapStateToProps)(Table)
